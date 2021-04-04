@@ -1,0 +1,65 @@
+
+body {
+    margin: 0px;
+}
+
+.MuiAppBar-positionSticky {
+    background: #032541 !important;
+}
+
+.menuPrincipal {
+    list-style-type: none;
+    list-style: none;
+}
+
+.menuPrincipal a{
+    text-decoration: none;
+    color: aliceblue;
+    text-transform: uppercase;
+    padding: 0 7px;
+}
+
+.menuPrincipal a:hover{
+    text-decoration: underline;
+}
+
+.menuPrincipal li{
+    display: inline;
+    font-size: 13px;
+}
+
+.paddingContent{
+    padding: 25px;
+}
+
+.cardContenido{
+    width: 145px;
+    height: 260px;
+    padding: 0 30px;
+}
+
+.cardContenidoImg{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border-radius: 5%;
+    width: 130%;
+    min-height: calc(145px * 1.5);
+    height: calc(145px * 1.5);
+    overflow: hidden;
+}
+
+.cardTitulo{
+    font-size: .85rem;
+    font-weight: 700;
+    margin-top: -4px;
+}
+
+.cardFecha{
+    font-size: .8rem;
+    font-weight: 500;
+    color: grey;
+    margin-bottom: -10px;
+}
+
+.MuiRating-sizeSmall {
+    font-size: 1rem !important;
+}
