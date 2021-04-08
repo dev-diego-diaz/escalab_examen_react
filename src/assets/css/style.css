@@ -38,6 +38,12 @@ body {
     padding: 0 30px;
 }
 
+.cardContenidoPeople{
+    width: 400px;
+    height: 295px;
+    padding: 0 10px;
+}
+
 .cardContenidoImg{
     box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
     border-radius: 5%;
@@ -45,12 +51,30 @@ body {
     min-height: calc(145px * 1.5);
     height: calc(145px * 1.5);
     overflow: hidden;
+    margin-bottom: -10px;
+}
+
+.cardContenidoImgPeople{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    border-radius: 5%;
+    width: 170px;
+    min-height: calc(170px * 1.5);
+    height: calc(170px * 1.5);
+    overflow: hidden;
 }
 
 .cardTitulo{
-    font-size: .85rem;
-    font-weight: 700;
-    margin-top: -4px;
+    padding: 0px;
+    margin-top: -14px;
+    font-size: .9rem;
+    font-weight: 500
+}
+
+.cardTituloPeople{
+    padding: 0px;
+    margin-top: 0px;
+    font-size: .9rem;
+    font-weight: 500
 }
 
 .cardFecha{
@@ -63,3 +87,14 @@ body {
 .MuiRating-sizeSmall {
     font-size: 1rem !important;
 }
+
+.MuiButton-outlinedPrimary {
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.MuiButton-outlinedSecondary {
+    color: #ffffff;
+    border: 1px solid rgba(250, 255, 255, 0.5);
+}
+
