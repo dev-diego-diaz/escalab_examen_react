@@ -7,7 +7,7 @@ const CardContenido = ({img, titulo, valoracion, fecha}) => {
 
     return (
         
-        <div className="cardContenido">
+        <div className="cardContenido" style={{marginBottom:'30px'}}>
             <Link href="#" title={titulo}>
                 <img className="cardContenidoImg" src={img} alt=""/>
             </Link>

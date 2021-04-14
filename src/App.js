@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, Suspense, lazy} from 'react';
 import {BrowserRouter, Switch, Route } from "react-router-dom";
 
 
@@ -9,6 +9,8 @@ import Series from './components/Series/Series';
 
 import './assets/css/style.css';
 import TrendingContextProvider from './contexts/TrendingContext';
+import PeliculasContextProvider from './contexts/PeliculasContext';
+import SeriesContextProvider from './contexts/SeriesContext';
 
 function App() {
   return (
@@ -17,14 +19,20 @@ function App() {
       <BrowserRouter>
         <Header/>
           <Switch>
-            
-              <TrendingContextProvider>
-                <Route exact path="/" activeClassName="active" component={Trending} />
-              </TrendingContextProvider>
+            <Suspense>
+                <TrendingContextProvider>
+                  <Route exact path="/" activeClassName="active" component={Trending} />
+                </TrendingContextProvider>
 
+                <PeliculasContextProvider>
+                  <Route path="/peliculas" component={Peliculas} />
+                </PeliculasContextProvider>
 
-            <Route path="/peliculas" component={Peliculas} />
-            <Route path="/series" component={Series} />
+                <SeriesContextProvider>
+                  <Route path="/series" component={Series} />
+                </SeriesContextProvider>
+            </Suspense>
+
           </Switch>
       </BrowserRouter>
     </Fragment>

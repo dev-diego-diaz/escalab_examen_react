@@ -29,8 +29,8 @@ const TrendingContextProvider = ({children}) => {
         .then(res => res.json())
         .then(data => {
             setTrendingPeliculas( data.results );
-            setContenidoPrincipal( data.results[7] );
-            trailer(data.results[7].id);
+            setContenidoPrincipal( data.results[1] );
+            trailer(data.results[1].id);
         })
         .catch(err => console.log(err));
         

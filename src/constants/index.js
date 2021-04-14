@@ -10,8 +10,8 @@ export const tendencias_semanal_series    = () => `${url_base}/trending/tv/week?
 export const tendencias_semanal_actores   = () => `${url_base}/trending/person/week?api_key=${api_key}&&${idioma}`;
 
 // Descubrimiento de nuevo contenido
-const descubrir_peliculas = `${url_base}/discover/movie?api_key=${api_key}&&${idioma}`;
-const descubrir_series    = `${url_base}/discover/tv?api_key=${api_key}&&${idioma}`;
+export const descubrir_peliculas = () => `${url_base}/discover/movie?api_key=${api_key}&&${idioma}`;
+export const descubrir_series    = () => `${url_base}/discover/tv?api_key=${api_key}&&${idioma}`;
 
 // Generos/Categorias
 const generos_peliculas = `${url_base}/genre/movie/list?api_key=${api_key}&&${idioma}`;
@@ -27,6 +27,7 @@ const series_similares    = id_serie => `${url_base}/tv/${id_serie}/similar?api_
 
 // Video Trailer
 export const pelicula_trailer = id_pelicula => `${url_base}/movie/${id_pelicula}/videos?api_key=${api_key}&&${idioma}`;
+export const serie_trailer = id_serie => `${url_base}/tv/${id_serie}/videos?api_key=${api_key}&&${idioma}`;
 
 // Buscar
 const buscarPelicula = busqueda => `${url_base}/search/movie?api_key=${api_key}&&quer=${busqueda}&&${idioma}`;
