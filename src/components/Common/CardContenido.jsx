@@ -3,13 +3,13 @@ import { Box } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import { Link } from 'react-router-dom';
 
-const CardContenido = ({img, titulo, valoracion, fecha}) => {
+const CardContenido = ({id, img, titulo, valoracion, fecha}) => {
 
     return (
-        
         <div className="cardContenido" style={{marginBottom:'30px'}}>
-            <Link href="#" title={titulo}>
-                <img className="cardContenidoImg" src={img} alt=""/>
+
+            <Link to={`detalle/contendo/${id}`} title={titulo}>
+                <img className="cardContenidoImg" src={img} alt={titulo} />
             </Link>
 
             <Box component="fieldset" borderColor="transparent">

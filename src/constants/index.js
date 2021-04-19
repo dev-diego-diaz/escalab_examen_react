@@ -2,7 +2,7 @@
 const api_key    = '6ef73f560370655db1cdfc6e38aa5b79';
 const url_base   = 'https://api.themoviedb.org/3';
 const idioma     = 'language=es';
-const url_imagen = 'https://image.tmdb.org/t/p/w500/';
+export const url_imagen = 'https://image.tmdb.org/t/p/w500/';
 
 // Tendencias semanales
 export const tendencias_semanal_peliculas = () => `${url_base}/trending/movie/week?api_key=${api_key}&&${idioma}`;
@@ -36,4 +36,5 @@ const buscarSerie    = busqueda => `${url_base}/search/movie?api_key=${api_key}&
 
 
 // Detalles de persona (Biografía)
-const detalle_persona = id_persona => `${url_base}/person/${id_persona}?api_key=${api_key}&&${idioma}`;
+export const detalle_persona = id_persona => `${url_base}/person/${id_persona}?api_key=${api_key}&&${idioma}`;
+export const filmografia     = id_persona => `${url_base}/person/${id_persona}/movie_credits?api_key=${api_key}&&${idioma}`;

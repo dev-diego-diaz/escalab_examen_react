@@ -18,7 +18,7 @@ const ContenidoPrincipal = ({ titulo, sinopsis, trailer }) => {
                 width='100%'
                 height='380px'
                 volume={0.2}
-                playing={true}
+                // playing={true}
             />
         </div>
     )

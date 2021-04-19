@@ -11,6 +11,7 @@ import './assets/css/style.css';
 import TrendingContextProvider from './contexts/TrendingContext';
 import PeliculasContextProvider from './contexts/PeliculasContext';
 import SeriesContextProvider from './contexts/SeriesContext';
+import DetallePersona from './components/Common/DetallePersona';
 
 function App() {
   return (
@@ -19,18 +20,39 @@ function App() {
       <BrowserRouter>
         <Header/>
           <Switch>
+            
             <Suspense>
-                <TrendingContextProvider>
-                  <Route exact path="/" activeClassName="active" component={Trending} />
-                </TrendingContextProvider>
+                <Route exact path="/" activeClassName="active">
+                  <TrendingContextProvider>
+                    <Trending />
+                  </TrendingContextProvider>
+                </Route>
 
-                <PeliculasContextProvider>
-                  <Route path="/peliculas" component={Peliculas} />
-                </PeliculasContextProvider>
+                <Route path="/peliculas">
+                  <PeliculasContextProvider>
+                    <Peliculas />
+                  </PeliculasContextProvider>
+                </Route>
 
-                <SeriesContextProvider>
-                  <Route path="/series" component={Series} />
-                </SeriesContextProvider>
+                <Route path="/series">
+                  <SeriesContextProvider>
+                    <Series />
+                  </SeriesContextProvider>
+                </Route>
+
+
+                {/* <Route path="/detalle/contenido/:id">
+                  <TrendingContextProvider>
+                    <CardPeople />
+                  </TrendingContextProvider>
+                </Route> */}
+
+                <Route path="/actor/detalle/:id_actor">
+                  <TrendingContextProvider>
+                    <DetallePersona />
+                  </TrendingContextProvider>
+                </Route>
+
             </Suspense>
 
           </Switch>

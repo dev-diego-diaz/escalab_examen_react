@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 
-const CardPeople = ({img, nombre}) => {
+const CardPeople = ({id, img, nombre}) => {
     return (
 
         <div className="cardContenidoPeople">
-            <Link href="#" title={nombre}>
+            <Link to={`actor/detalle/${id}`} title={nombre}>
                 <img className="cardContenidoImgPeople" src={img} alt={nombre}/>
             </Link>
 
