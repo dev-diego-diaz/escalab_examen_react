@@ -6,10 +6,10 @@ import '../../assets/css/style.css';
 import CardPeople from './CardPeople';
 import noImage from '../../assets/img/no_imagen.png';
 
-const DetalleContenido = () => {
+const DetalleSerie = () => {
 
-    const { detallePelicula, infoGeneralPelicula } = useContext(TrendingContext);
-    const { title, backdrop_path, poster_path, release_date, vote_average, overview } = detallePelicula;
+    const { detalleSerie, infoGeneralSerie } = useContext(TrendingContext);
+    const { name, backdrop_path, poster_path, first_air_date, vote_average, overview } = detalleSerie;
 
     return (
         <Fragment>
@@ -18,20 +18,19 @@ const DetalleContenido = () => {
                     <Box display="flex" className="contenedorBackgroundTenue">
                         <Box style={{position:'relative', width:'100%'}} display="flex">
                             <Box style={{width:'30%',height:'100%'}} display="flex" justifyContent="center" alignItems="center">
-                                <img src={ (poster_path) ? `https://www.themoviedb.org/t/p/w342${poster_path}` : poster_path} style={{width:'70%', borderRadius:'3%'}} alt=""/>
+                                <img src={`https://www.themoviedb.org/t/p/w342${poster_path}`} style={{width:'70%', borderRadius:'3%'}} alt=""/>
                             </Box>
                             <Box style={{width:'70%', margin:'30px', color:'#fff'}} display="flex" flexDirection="column">
-                                <Box style={{fontSize:'40px'}}><b>{title}</b> ({new Date(release_date).getFullYear()})</Box>
+                                <Box style={{fontSize:'40px'}}><b>{name}</b> ({new Date(first_air_date).getFullYear()})</Box>
                                 <Box>Puntuación de usuarios {vote_average * 10}%</Box>
 
                                 <Box style={{marginTop:'10px'}}><h3>Sinopsis</h3></Box>
                                 <Box style={{textAlign:'justify'}}>{overview}</Box>
 
-                                {/* Reparto */}
                                 <h2 style={{paddingTop:'10px'}}>Reparto</h2>
                                 <Box display="flex" justifyContent="start" alignContent="center" style={{overflowX:'scroll', overflowY:'hidden', width:'100%', minHeight:'320px'}}>
                                     { 
-                                        infoGeneralPelicula?.map((info, index) => (
+                                        infoGeneralSerie.map((info, index) => (
                                             <CardPeople id={info.id} key={index} img={ (info.profile_path) ? 'https://www.themoviedb.org/t/p/w220_and_h330_face/'+info.profile_path : noImage} nombre={info.name} valoracion={info.popularity} />
                                         ))
                                     }
@@ -47,4 +46,4 @@ const DetalleContenido = () => {
     )
 }
 
-export default DetalleContenido;
+export default DetalleSerie;

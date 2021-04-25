@@ -19,7 +19,7 @@ const Peliculas = () => {
             <div className="paddingContent">
                 <Box display="flex" flexWrap="wrap" justifyContent="center" alignContent="center" >
                     { peliculas.map((pelicula, index) => (
-                            <CardContenido key={index} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+pelicula.poster_path} titulo={pelicula.title} valoracion={pelicula.vote_average} fecha={pelicula.release_date} />
+                            <CardContenido pelicula id={pelicula.id} key={index} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+pelicula.poster_path} titulo={pelicula.title} valoracion={pelicula.vote_average} fecha={pelicula.release_date} />
                         ))
                     }
                 </Box>

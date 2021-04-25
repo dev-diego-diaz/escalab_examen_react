@@ -5,9 +5,6 @@ export const PeliculasContext = createContext();
 
 const PeliculasContextProvider = ({children}) => {
 
-    // Hooks URLS
-    const [urlPeliculas, setUrlPeliculas] = useState(descubrir_peliculas);
-
     // Hooks
     const [peliculas, setPeliculas] = useState([]);
     const [contenidoPrincipal, setContenidoPrincipal] = useState([]);
@@ -18,7 +15,7 @@ const PeliculasContextProvider = ({children}) => {
     async function ObtencionPeliculas() {
 
         // Peliculas
-        await fetch(urlPeliculas)
+        await fetch(descubrir_peliculas())
         .then(res => res.json())
         .then(data => {
             setPeliculas( data.results );
@@ -30,12 +27,11 @@ const PeliculasContextProvider = ({children}) => {
     }
 
     // Trailer contenido principal
-    const trailer = (id) =>{
+    const trailer = async (id) =>{
          
-         fetch( pelicula_trailer(id) )
+         await fetch( pelicula_trailer(id) )
          .then(res => res.json())
          .then(data => {
-             console.log(data.results);
             setTrailerContenidoPrincipal(data.results[0].key);
          })
          .catch(err => console.log(err));

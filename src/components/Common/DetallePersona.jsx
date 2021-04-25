@@ -18,7 +18,7 @@ const DetallePersona = () => {
 
                 <Box style={{width:'35%'}} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
 
-                    <img style={{width:'60%'}} src={`${url_imagen}${profile_path}`} alt={name}/>
+                    <img style={{width:'60%'}} src={ (profile_path) ? `${url_imagen}${profile_path}` : noImage} alt={name}/>
                     <p style={{fontSize:'1.5rem', fontWeight:700, padding: '10px 0 7px 0', margin: 0}}>Información personal</p>
                     
                     <p style={{padding: 0, margin: 0}}>Lugar de Nacimiento : {place_of_birth}</p>
@@ -36,12 +36,12 @@ const DetallePersona = () => {
                     <h2 style={{marginBottom: '15px', fontWeight: 500}}>Filmografía</h2>
 
                     {
-                        filmografiaActor.length > 0 ? (
+                        filmografiaActor ? (
 
                             <Box display="flex" justifyContent="start" alignContent="center" style={{overflowX:'scroll', overflowY:'hidden', width:'100%', minHeight:'320px'}}>
                                 { 
-                                    filmografiaActor.map((pelicula, index) => (
-                                        <CardContenido key={index} id={pelicula.id} img={ (pelicula.poster_path) ? 'https://www.themoviedb.org/t/p/w220_and_h330_face/'+pelicula.poster_path : noImage} titulo={pelicula.title} valoracion={pelicula.vote_average} fecha={pelicula.release_date} />
+                                    filmografiaActor?.map((pelicula, index) => (
+                                        <CardContenido pelicula key={index} id={pelicula.id} img={ (pelicula.poster_path) ? 'https://www.themoviedb.org/t/p/w220_and_h330_face/'+pelicula.poster_path : noImage} titulo={pelicula.title} valoracion={pelicula.vote_average} fecha={pelicula.release_date} />
                                     ))
                                 }
                             </Box>

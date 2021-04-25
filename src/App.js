@@ -14,6 +14,7 @@ import SeriesContextProvider from './contexts/SeriesContext';
 import DetallePersona from './components/Common/DetallePersona';
 import DetalleContenido from './components/Common/DetalleContenido';
 import PaginaNoEncontrada from './components/Common/PaginaNoEncontrada';
+import DetalleSerie from './components/Common/DetalleSerie';
 
 function App() {
   return (
@@ -41,9 +42,15 @@ function App() {
                   </SeriesContextProvider>
                 </Route>
 
-                <Route path="/detalle/:id_pelicula">
+                <Route path="/detalle/pelicula/:id_pelicula">
                   <TrendingContextProvider>
                     <DetalleContenido/>
+                  </TrendingContextProvider>
+                </Route>
+
+                <Route path="/detalle/serie/:id_serie">
+                  <TrendingContextProvider>
+                    <DetalleSerie />
                   </TrendingContextProvider>
                 </Route>
 

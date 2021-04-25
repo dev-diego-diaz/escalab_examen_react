@@ -19,7 +19,7 @@ const Series = () => {
                 
                 <Box display="flex" flexWrap="wrap" justifyContent="center" alignContent="center" >
                     { series.map((serie, index) => (
-                            <CardContenido key={index} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+serie.poster_path} titulo={serie.name} valoracion={serie.vote_average} fecha={serie.first_air_date} />
+                            <CardContenido key={index} id={serie.id} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+serie.poster_path} titulo={serie.name} valoracion={serie.vote_average} fecha={serie.first_air_date} />
                         ))
                     }
                 </Box>

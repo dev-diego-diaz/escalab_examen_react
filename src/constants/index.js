@@ -40,6 +40,7 @@ export const filmografia     = id_persona => `${url_base}/person/${id_persona}/m
 
 // Información general detalle
 export const info_general_pelicula = id_pelicula => `${url_base}/movie/${id_pelicula}/credits?api_key=${api_key}&&${idioma}`;
+export const info_general_serie = id_pelicula => `${url_base}/tv/${id_pelicula}/credits?api_key=${api_key}&&${idioma}`;
 
 
 // Generos

@@ -21,7 +21,7 @@ const Trending = () => {
                 <h2>Tendencias en películas</h2>
                 <Box display="flex" justifyContent="start" alignContent="center" style={{overflowX:'scroll', overflowY:'hidden', width:'100%', minHeight:'320px'}}>
                     { trendingPeliculas.map((pelicula, index) => (
-                            <CardContenido key={index} id={pelicula.id} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+pelicula.poster_path} titulo={pelicula.title} valoracion={pelicula.vote_average} fecha={pelicula.release_date} />
+                            <CardContenido pelicula={true} key={index} id={pelicula.id} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+pelicula.poster_path} titulo={pelicula.title} valoracion={pelicula.vote_average} fecha={pelicula.release_date} />
                         ))
                     }
                 </Box>
@@ -29,7 +29,7 @@ const Trending = () => {
                 <h2>Tendencias en series</h2>
                 <Box display="flex" justifyContent="start" alignContent="center" style={{overflowX:'scroll', overflowY:'hidden', width:'100%', minHeight:'320px'}}>
                     { trendingSeries.map((serie, index) => (
-                            <CardContenido key={index} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+serie.poster_path} titulo={serie.title} valoracion={serie.vote_average} fecha={serie.first_air_date} />
+                            <CardContenido pelicula={false} key={index} id={serie.id} img={'https://www.themoviedb.org/t/p/w220_and_h330_face/'+serie.poster_path} titulo={serie.title} valoracion={serie.vote_average} fecha={serie.first_air_date} />
                         ))
                     }
                 </Box>

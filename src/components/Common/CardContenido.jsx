@@ -1,14 +1,15 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { Box } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import { Link } from 'react-router-dom';
 
-const CardContenido = ({id, img, titulo, valoracion, fecha}) => {
+const CardContenido = ({id, img, titulo, valoracion, fecha, pelicula}) => {
 
     return (
         <div className="cardContenido" style={{marginBottom:'30px'}}>
 
-            <Link to={`/detalle/contendo/${id}`} title={titulo}>
+            <Link to={ (pelicula) ? `/detalle/pelicula/${id}` : `/detalle/serie/${id}`} title={titulo}>
                 <img className="cardContenidoImg" src={img} alt={titulo} />
             </Link>
 
@@ -23,6 +24,20 @@ const CardContenido = ({id, img, titulo, valoracion, fecha}) => {
         </div>
         
     )
+}
+
+CardContenido.propTypes = {
+    id         : propTypes.number,
+    img        : propTypes.string,
+    titulo     : propTypes.string,
+    valoracion : propTypes.string,
+    fecha      : propTypes.string,
+    pelicula   : propTypes.bool,
+
+};
+
+CardContenido.defaultProps = {
+    pelicula: false,
 }
 
 export default CardContenido;

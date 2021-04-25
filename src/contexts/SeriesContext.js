@@ -5,9 +5,6 @@ export const SeriesContext = createContext();
 
 const SeriesContextProvider = ({children}) => {
 
-    // Hooks URLS
-    const [urlSeries, setUrlSeries] = useState(descubrir_series);
-
     // Hooks
     const [series, setSeries] = useState([]);
     const [contenidoPrincipal, setContenidoPrincipal] = useState([]);
@@ -18,7 +15,7 @@ const SeriesContextProvider = ({children}) => {
     async function ObtencionSeries() {
 
         // Series
-        await fetch(urlSeries)
+        await fetch(descubrir_series())
         .then(res => res.json())
         .then(data => {
             setSeries( data.results );
@@ -30,9 +27,9 @@ const SeriesContextProvider = ({children}) => {
     }
 
     // Trailer contenido principal
-    const trailer = (id) =>{
+    const trailer = async (id) =>{
          
-         fetch( serie_trailer(id) )
+         await fetch( serie_trailer(id) )
          .then(res => res.json())
          .then(data => {
             console.log(data.results);

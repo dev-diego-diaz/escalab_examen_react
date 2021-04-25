@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import { Button } from '@material-ui/core';
 import ReactPlayer from 'react-player';
 
@@ -23,5 +24,12 @@ const ContenidoPrincipal = ({ titulo, sinopsis, trailer }) => {
         </div>
     )
 }
+
+ContenidoPrincipal.propTypes = {
+    titulo: propTypes.string,
+    sinopsis: propTypes.string,
+    trailer: propTypes.string,
+};
+
 
 export default ContenidoPrincipal;
