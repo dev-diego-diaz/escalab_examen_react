@@ -22,8 +22,8 @@ const SeriesContextProvider = ({children}) => {
         .then(res => res.json())
         .then(data => {
             setSeries( data.results );
-            setContenidoPrincipal( data.results[0] );
-            trailer(data.results[0].id);
+            setContenidoPrincipal( data.results[3] );
+            trailer(data.results[3].id);
         })
         .catch(err => console.log(err));
 

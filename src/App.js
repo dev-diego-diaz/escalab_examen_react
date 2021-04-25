@@ -12,6 +12,8 @@ import TrendingContextProvider from './contexts/TrendingContext';
 import PeliculasContextProvider from './contexts/PeliculasContext';
 import SeriesContextProvider from './contexts/SeriesContext';
 import DetallePersona from './components/Common/DetallePersona';
+import DetalleContenido from './components/Common/DetalleContenido';
+import PaginaNoEncontrada from './components/Common/PaginaNoEncontrada';
 
 function App() {
   return (
@@ -19,9 +21,8 @@ function App() {
     <Fragment>
       <BrowserRouter>
         <Header/>
-          <Switch>
-            
-            <Suspense>
+          <Suspense fallback={<p>Cargando ... </p>}>
+            <Switch>
                 <Route exact path="/" activeClassName="active">
                   <TrendingContextProvider>
                     <Trending />
@@ -40,22 +41,21 @@ function App() {
                   </SeriesContextProvider>
                 </Route>
 
-
-                {/* <Route path="/detalle/contenido/:id">
+                <Route path="/detalle/:id_pelicula">
                   <TrendingContextProvider>
-                    <CardPeople />
+                    <DetalleContenido/>
                   </TrendingContextProvider>
-                </Route> */}
+                </Route>
 
                 <Route path="/actor/detalle/:id_actor">
                   <TrendingContextProvider>
                     <DetallePersona />
                   </TrendingContextProvider>
                 </Route>
-
-            </Suspense>
-
-          </Switch>
+                
+                <Route component={PaginaNoEncontrada}/>
+            </Switch>
+          </Suspense>
       </BrowserRouter>
     </Fragment>
 

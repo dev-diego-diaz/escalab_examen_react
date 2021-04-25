@@ -8,7 +8,7 @@ const CardContenido = ({id, img, titulo, valoracion, fecha}) => {
     return (
         <div className="cardContenido" style={{marginBottom:'30px'}}>
 
-            <Link to={`detalle/contendo/${id}`} title={titulo}>
+            <Link to={`/detalle/contendo/${id}`} title={titulo}>
                 <img className="cardContenidoImg" src={img} alt={titulo} />
             </Link>
 

@@ -6,9 +6,6 @@ import CardContenido from '../Common/CardContenido'
 import ContenidoPrincipal from '../Common/ContenidoPrincipal';
 import CardPeople from '../Common/CardPeople';
 
-import noImage from '../../assets/img/no_imagen.png';
-
-
 const Trending = () => {
 
     const { contenidoPrincipal, trailerContenidoPrincipal, trendingPeliculas, trendingSeries, trendingActores } = useContext(TrendingContext);

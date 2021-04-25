@@ -6,7 +6,7 @@ const CardPeople = ({id, img, nombre}) => {
     return (
 
         <div className="cardContenidoPeople">
-            <Link to={`actor/detalle/${id}`} title={nombre}>
+            <Link to={`/actor/detalle/${id}`} replace title={nombre}>
                 <img className="cardContenidoImgPeople" src={img} alt={nombre}/>
             </Link>
 

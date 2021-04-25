@@ -18,8 +18,8 @@ const generos_peliculas = `${url_base}/genre/movie/list?api_key=${api_key}&&${id
 const generos_series    = `${url_base}/genre/tv/list?api_key=${api_key}&&${idioma}`;
 
 // Detalles e información
-const detalle_pelicula = id_pelicula => `${url_base}/movie/${id_pelicula}?api_key=${api_key}&&${idioma}`;
-const detalle_serie    = id_serie => `${url_base}/tv/${id_serie}?api_key=${api_key}&&${idioma}`;
+export const detalle_pelicula = id_pelicula => `${url_base}/movie/${id_pelicula}?api_key=${api_key}&&${idioma}`;
+export const detalle_serie    = id_serie => `${url_base}/tv/${id_serie}?api_key=${api_key}&&${idioma}`;
 
 // Similares
 const peliculas_similares = id_pelicula => `${url_base}/movie/${id_pelicula}/similar?api_key=${api_key}&&${idioma}`;
@@ -34,7 +34,13 @@ const buscarPelicula = busqueda => `${url_base}/search/movie?api_key=${api_key}&
 const buscarSerie    = busqueda => `${url_base}/search/movie?api_key=${api_key}&&quer=${busqueda}&&${idioma}`;
 
 
-
 // Detalles de persona (Biografía)
 export const detalle_persona = id_persona => `${url_base}/person/${id_persona}?api_key=${api_key}&&${idioma}`;
 export const filmografia     = id_persona => `${url_base}/person/${id_persona}/movie_credits?api_key=${api_key}&&${idioma}`;
+
+// Información general detalle
+export const info_general_pelicula = id_pelicula => `${url_base}/movie/${id_pelicula}/credits?api_key=${api_key}&&${idioma}`;
+
+
+// Generos
+export const obtener_generos = () => `${url_base}/genre/movie/list?api_key=${api_key}&&${idioma}`;

@@ -22,8 +22,8 @@ const PeliculasContextProvider = ({children}) => {
         .then(res => res.json())
         .then(data => {
             setPeliculas( data.results );
-            setContenidoPrincipal( data.results[2] );
-            trailer(data.results[2].id);
+            setContenidoPrincipal( data.results[5] );
+            trailer(data.results[5].id);
         })
         .catch(err => console.log(err));
 
