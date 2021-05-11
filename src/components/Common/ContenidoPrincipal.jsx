@@ -28,7 +28,6 @@ const ContenidoPrincipal = ({ titulo, sinopsis, trailer }) => {
 ContenidoPrincipal.propTypes = {
     titulo: propTypes.string,
     sinopsis: propTypes.string,
-    trailer: propTypes.string,
 };
 
 

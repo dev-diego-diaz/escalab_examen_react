@@ -6,8 +6,13 @@ import '../../assets/css/style.css';
 import CardPeople from './CardPeople';
 import noImage from '../../assets/img/no_imagen.png';
 
+import useModal from '../../hooks/useModal';
+import Modal from './Modal';
+
 const DetalleContenido = () => {
 
+    const { modal, abrirModal, cerrarModal} = useModal();
+    
     const { detallePelicula, infoGeneralPelicula } = useContext(TrendingContext);
     const { title, backdrop_path, poster_path, release_date, vote_average, overview } = detallePelicula;
 
@@ -18,7 +23,11 @@ const DetalleContenido = () => {
                     <Box display="flex" className="contenedorBackgroundTenue">
                         <Box style={{position:'relative', width:'100%'}} display="flex">
                             <Box style={{width:'30%',height:'100%'}} display="flex" justifyContent="center" alignItems="center">
-                                <img src={ (poster_path) ? `https://www.themoviedb.org/t/p/w342${poster_path}` : poster_path} style={{width:'70%', borderRadius:'3%'}} alt=""/>
+                                <img src={ (poster_path) ? `https://www.themoviedb.org/t/p/w342${poster_path}` : poster_path} 
+                                     style={{width:'70%', borderRadius:'3%', cursor:'pointer'}} 
+                                     alt={title} 
+                                     onClick={abrirModal}
+                                />
                             </Box>
                             <Box style={{width:'70%', margin:'30px', color:'#fff'}} display="flex" flexDirection="column">
                                 <Box style={{fontSize:'40px'}}><b>{title}</b> ({new Date(release_date).getFullYear()})</Box>
@@ -43,6 +52,12 @@ const DetalleContenido = () => {
                     </Box>
                 </div>
             </div>
+
+            <Modal isOpen={modal} onClose={cerrarModal}>
+                <img src={ (poster_path) ? `https://www.themoviedb.org/t/p/w342${poster_path}` : poster_path} style={{width:'120%', borderRadius:'3%'}} alt={title} />
+            </Modal>
+
+            
         </Fragment>
     )
 }

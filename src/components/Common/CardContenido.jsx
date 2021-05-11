@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
+
 import { Box } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import { Link } from 'react-router-dom';
@@ -19,8 +20,7 @@ const CardContenido = ({id, img, titulo, valoracion, fecha, pelicula}) => {
 
             <div className="cardTitulo">{titulo}</div>
             <div className="cardFecha">{fecha}</div>
-            
-           
+
         </div>
         
     )
@@ -30,7 +30,7 @@ CardContenido.propTypes = {
     id         : propTypes.number,
     img        : propTypes.string,
     titulo     : propTypes.string,
-    valoracion : propTypes.string,
+    valoracion : propTypes.number,
     fecha      : propTypes.string,
     pelicula   : propTypes.bool,
 

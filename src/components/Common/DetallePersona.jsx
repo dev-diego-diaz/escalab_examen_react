@@ -1,15 +1,19 @@
-import React, {useContext}  from 'react'
+import React, {useContext, useState}  from 'react'
 import { Box }              from '@material-ui/core'
 import { TrendingContext }  from '../../contexts/TrendingContext';
 import { url_imagen }       from '../../constants';
 import CardContenido        from './CardContenido';
 import noImage              from '../../assets/img/no_imagen.png';
 
+import useModal             from '../../hooks/useModal';
+import Modal                from './Modal';
+
 const DetallePersona = () => {
 
     const {detallePersona, filmografiaActor} = useContext(TrendingContext);
-
     const { name, birthday, biography, place_of_birth, popularity, profile_path } = detallePersona;
+
+    const { modal, abrirModal, cerrarModal} = useModal();
 
     return (
         <div style={{width:'100%'}}>
@@ -18,7 +22,7 @@ const DetallePersona = () => {
 
                 <Box style={{width:'35%'}} display="flex" flexDirection="column" justifyContent="center" alignItems="center">
 
-                    <img style={{width:'60%'}} src={ (profile_path) ? `${url_imagen}${profile_path}` : noImage} alt={name}/>
+                    <img style={{width:'60%', cursor:'pointer'}} src={ (profile_path) ? `${url_imagen}${profile_path}` : noImage} alt={name} onClick={abrirModal} />
                     <p style={{fontSize:'1.5rem', fontWeight:700, padding: '10px 0 7px 0', margin: 0}}>Información personal</p>
                     
                     <p style={{padding: 0, margin: 0}}>Lugar de Nacimiento : {place_of_birth}</p>
@@ -55,7 +59,11 @@ const DetallePersona = () => {
 
                 </Box>
 
-            </Box>   
+            </Box> 
+
+            <Modal isOpen={modal} onClose={cerrarModal}>
+                <img style={{width:'80%'}} src={ (profile_path) ? `${url_imagen}${profile_path}` : noImage} alt={name}/>
+            </Modal>
 
         </div>
     )

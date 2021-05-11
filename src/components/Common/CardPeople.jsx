@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-
 const CardPeople = ({id, img, nombre}) => {
+
     return (
 
         <div className="cardContenidoPeople">
@@ -12,6 +12,7 @@ const CardPeople = ({id, img, nombre}) => {
             </Link>
 
             <div className="cardTituloPeople">{nombre}</div>
+
         </div>
     )
 }
