@@ -8,6 +8,8 @@ import noImage              from '../../assets/img/no_imagen.png';
 import useModal             from '../../hooks/useModal';
 import Modal                from './Modal';
 
+import { withError } from '../Error/index';
+
 const DetallePersona = () => {
 
     const {detallePersona, filmografiaActor} = useContext(TrendingContext);
@@ -70,4 +72,4 @@ const DetallePersona = () => {
 }
 
 
-export default DetallePersona;
+export default withError(DetallePersona);

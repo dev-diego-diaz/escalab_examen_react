@@ -3,6 +3,8 @@ import propTypes from 'prop-types';
 import { Button } from '@material-ui/core';
 import ReactPlayer from 'react-player';
 
+import { withError } from '../Error/index';
+
 const ContenidoPrincipal = ({ titulo, sinopsis, trailer }) => {
     return (
         <div>
@@ -31,4 +33,4 @@ ContenidoPrincipal.propTypes = {
 };
 
 
-export default ContenidoPrincipal;
+export default withError(ContenidoPrincipal);

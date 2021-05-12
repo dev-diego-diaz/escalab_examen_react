@@ -5,6 +5,8 @@ import { Box } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import { Link } from 'react-router-dom';
 
+import { withError } from '../Error/index';
+
 const CardContenido = ({id, img, titulo, valoracion, fecha, pelicula}) => {
 
     return (
@@ -40,4 +42,4 @@ CardContenido.defaultProps = {
     pelicula: false,
 }
 
-export default CardContenido;
+export default withError(CardContenido);

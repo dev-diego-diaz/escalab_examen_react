@@ -9,6 +9,8 @@ import noImage from '../../assets/img/no_imagen.png';
 import useModal from '../../hooks/useModal';
 import Modal from './Modal';
 
+import { withError } from '../Error/index';
+
 const DetalleContenido = () => {
 
     const { modal, abrirModal, cerrarModal} = useModal();
@@ -62,4 +64,4 @@ const DetalleContenido = () => {
     )
 }
 
-export default DetalleContenido;
+export default withError(DetalleContenido);

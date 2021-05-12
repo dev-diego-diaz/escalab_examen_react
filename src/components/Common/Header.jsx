@@ -5,6 +5,7 @@ import { AppBar, Toolbar } from "@material-ui/core";
 import Box from '@material-ui/core/Box';
 import Logo from '../../assets/img/logo.svg';
 
+import { withError } from '../Error/index';
 
 const Header = () => {
     return(
@@ -39,4 +40,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default withError(Header);

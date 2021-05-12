@@ -9,6 +9,8 @@ import noImage from '../../assets/img/no_imagen.png';
 import useModal             from '../../hooks/useModal';
 import Modal                from './Modal';
 
+import { withError } from '../Error/index';
+
 const DetalleSerie = () => {
 
     const { detalleSerie, infoGeneralSerie } = useContext(TrendingContext);
@@ -49,10 +51,10 @@ const DetalleSerie = () => {
             </div>
 
             <Modal isOpen={modal} onClose={cerrarModal}>
-                {/* <img src={`https://www.themoviedb.org/t/p/w342${poster_path}`} style={{width:'120%', borderRadius:'3%'}} alt=""/> */}
+                <img src={`https://www.themoviedb.org/t/p/w342${poster_path}`} style={{width:'120%', borderRadius:'3%'}} alt=""/>
             </Modal>
         </Fragment>
     )
 }
 
-export default DetalleSerie;
+export default withError(DetalleSerie);

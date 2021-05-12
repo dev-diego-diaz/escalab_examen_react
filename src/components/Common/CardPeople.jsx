@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { withError } from '../Error/index';
+
 const CardPeople = ({id, img, nombre}) => {
 
     return (
@@ -23,4 +25,4 @@ CardPeople.propTypes = {
     nombre     : propTypes.string
 };
 
-export default CardPeople;
+export default withError(CardPeople);

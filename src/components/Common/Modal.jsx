@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 
+import { withError } from '../Error/index';
+
 const Modal = ({isOpen, children, onClose}) => {
 
     const [ modal, setModal ] = useState(true);
@@ -23,4 +25,4 @@ const Modal = ({isOpen, children, onClose}) => {
         )
     }
 
-export default Modal
+export default withError(Modal);
