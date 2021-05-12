@@ -45,7 +45,7 @@ Por otro lado se encuentran las secciónes que se gatillan mediante la acción d
 
 - El proyecto en producción fue desplegado en  en **Vercel**
 
-- Fue implementado **ErrorBoundary** con un limite de 3 erroes
+- Fue implementado **ErrorBoundary** en todos los componentes de la aplicación
 
 
 
